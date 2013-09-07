@@ -17,6 +17,7 @@ describe "Problem1" do
     problem1 == '3 is divisible by 3'
     problem1 == '6 is divisible by 3'
     problem1 == '9 is divisible by 3'
+    
   end
   
   it "checks numbers divisible by 5" do

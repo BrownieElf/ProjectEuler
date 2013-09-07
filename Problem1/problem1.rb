@@ -1,19 +1,14 @@
 class Problem1
   
 sum = 0
-  (1...10).each do |number|
-    if number % 3 == 0
-      print number
-      sum = sum + number
-      puts ' divisible by 3'
-    elsif number % 5 == 0
-      print number
-      puts ' divisible by 5'
-      sum = sum + number
+  (1...1000).each do |number|
+    if number % 3 == 0 || number % 5 == 0
+      puts number
+      sum += number
     else
-      puts number  
+      number  
     end
   
   end
-puts sum
+puts "Sum of numbers divisible by 3 and 5: " + sum.to_s
 end
