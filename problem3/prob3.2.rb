@@ -22,3 +22,6 @@ factors.uniq.each do |factor|
 end
 
 puts factors
+
+# answer: 6857
+
