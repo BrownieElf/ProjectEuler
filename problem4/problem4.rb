@@ -6,15 +6,22 @@
 #Find the largest palindrome made from the product of two 3-digit numbers.
 
 palindromes = []
+highest_palindrome = 0
 product = ""
 
-(10..99).each do |number|
-  (10..99).each do |num|
+(100..999).each do |number|
+  (100..999).each do |num|
     product = number * num if (number * num).to_s == (number * num).to_s.reverse
-    palindromes << product
+    palindromes << product.to_s
+    
+    highest_palindrome = number * num if (number * num > highest_palindrome) && (number * num).to_s == (number * num).to_s.reverse
+    
+    
   end  
 end
 
-puts product
-#palindromes = palindromes.uniq
-#puts palindromes
+#puts product
+palindromes = palindromes.uniq
+#puts palindromes = palindromes.sort
+puts highest_palindrome
+#answer: 906609
