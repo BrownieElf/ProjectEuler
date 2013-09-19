@@ -1,0 +1,50 @@
+=begin
+Smallest multiple
+Problem 5
+2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+
+What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+=end
+
+#divisible = 10
+#divisible = 20
+
+#number = 0
+#smallest_number = 0
+
+public
+
+def divisible_by?(number, divided_by_each_number_between_1_and, smallest_number)
+  divided_by = 1
+#  smallest_number = 0
+  test = true
+  divided_total = 0
+  
+  (1..divided_by_each_number_between_1_and).each do |divisible|
+    
+    smallest_number = divided_by_each_number_between_1_and
+    divided_total =  number / divisible if number % divisible == 0
+    
+    puts "#{number} divided by #{divided_by} equals: #{divided_total}"
+#    puts "divides evenly?: #{test}"
+#    puts
+    
+    
+    
+ #   puts test
+#    puts "This is the #{smallest_number}"
+    divided_by += 1
+    test = false if number % divisible != 0
+    
+  end
+  puts
+  puts "#{number} can be divided by all the numbers"
+  puts "between #{1} and #{divided_by_each_number_between_1_and}"
+  puts
+  puts "divides evenly for all the numbers?: #{test}"
+  
+end
+
+divisible_by?(2520, 10, 1)
+
+
