@@ -17,34 +17,45 @@ public
 def divisible_by?(number, divided_by_each_number_between_1_and, smallest_number)
   divided_by = 1
 #  smallest_number = 0
-  test = true
+#  test = true ### commented out added below
   divided_total = 0
   
   (1..divided_by_each_number_between_1_and).each do |divisible|
     
     smallest_number = divided_by_each_number_between_1_and
-    divided_total =  number / divisible if number % divisible == 0
     
-    puts "#{number} divided by #{divided_by} equals: #{divided_total}"
-#    puts "divides evenly?: #{test}"
-#    puts
+    if number % divisible == 0
+      divided_total =  number / divisible 
+      puts "#{number} divided by #{divided_by} equals: #{divided_total}"
+      smallest_number = number
+      test = true
+    else
+      puts "#{number} is not divisible by #{divided_by} "
+      test = false
+    end
     
+  divided_by += 1
     
-    
- #   puts test
-#    puts "This is the #{smallest_number}"
-    divided_by += 1
-    test = false if number % divisible != 0
-    
+  return test
   end
   puts
-  puts "#{number} can be divided by all the numbers"
-  puts "between #{1} and #{divided_by_each_number_between_1_and}"
-  puts
-  puts "divides evenly for all the numbers?: #{test}"
-  
+  if test == true
+    puts "Can #{number} be divided by all the numbers"
+    puts "between #{1} and #{divided_by_each_number_between_1_and}?  #{test}"
+  else
+    puts "#{number} cannot be evenly divided by all of the numbers"
+    puts "between 1 and #{divided_by_each_number_between_1_and}"
+  end
 end
 
-divisible_by?(2520, 10, 1)
+
+number = 1
+test = true
+while test == true do
+  
+  divisible_by?(number, 10, 0)
+  number += 1
+  
+end
 
 
