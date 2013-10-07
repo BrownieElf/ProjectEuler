@@ -4,31 +4,36 @@
 # What is the smallest positive number that is evenly divisible 
 # by all of the numbers from 1 to 20?
 
-MAX_DIVISOR = 11
+MAX_DIVISOR = 20
 
-def is_div_by_whatever(n, d)
-  find_count = 0
-  1.upto(d) do |divisor|
-    if (n % divisor) == 0
-      find_count += 1 
-    else 
+def is_div_by_whatever(n)
+#  test = true
+  array = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11]
+# array = [11, 10, 9, 8, 7, 6, 4]
+  array.each do |array|
+    if n % array != 0
       return false
+    else
+      
     end
   end
-  return (find_count == d)
+  return true
+  
 end
 
 # What is the smallest positive number?
 # loop over positive numbers until we find something
 
-n = 1
+#n = 20
+n = 400000
 while true
-  if is_div_by_whatever(n, MAX_DIVISOR)
+  if is_div_by_whatever(n)
     puts "Hey! #{n} is a winner"
     exit
   else
     puts "Try #{n}"
   end
-  n = n + 1
+#  n = n + 20
+  n += 400000
 end
 
